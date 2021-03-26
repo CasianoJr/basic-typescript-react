@@ -1,12 +1,24 @@
 import React from "react";
-import { MainTodo } from "./simpleTodo/MainTodo";
+import { BrowserRouter } from "react-router-dom";
+import { Routes } from "./Routes";
+import { NavBar } from "./shared/NavBar";
+import { ReduxProvider } from "./store/ReduxProvider";
 
 const App: React.FC = () => {
   return (
-    <div className="text-center">
-      <h3>Hello Typescript</h3>
+    <>
+      {/* <h3>Hello Typescript</h3>
       <MainTodo />
-    </div>
+    <hr/> */}
+      <ReduxProvider>
+        <BrowserRouter>
+          <div className="text-center">
+            <NavBar />
+            <Routes />
+          </div>
+        </BrowserRouter>
+      </ReduxProvider>
+    </>
   );
 };
 
