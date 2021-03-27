@@ -23,7 +23,7 @@ export const NavBar: React.FC = () => {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/">Others</Link>
+          <Link to="/about">Others</Link>
         </li>
         <li>
           <Link to="/cart">Cart <small className="cart-badge">{numberInCart}</small></Link>

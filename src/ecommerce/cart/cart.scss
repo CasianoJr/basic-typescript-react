@@ -1,0 +1,19 @@
+.product-cart{
+    div{
+        display: flex;
+        img{
+            height: 100px;
+            margin: 10px 50px;
+        }
+        p, h4{
+            margin: 40px 10px
+        }
+   
+    }
+}
+
+.cart-total{
+    justify-content: flex-end;
+    margin-right: 300px;
+    font-size: 30px;
+}

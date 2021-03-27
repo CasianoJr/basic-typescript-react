@@ -6,12 +6,14 @@ import { ReduxProvider } from "./store/ReduxProvider";
 
 const App: React.FC = () => {
   return (
-      <ReduxProvider>
-        <BrowserRouter>
-            <NavBar />
-            <Routes />
-        </BrowserRouter>
-      </ReduxProvider>
+    <ReduxProvider>
+      <BrowserRouter>
+        <NavBar />
+        <div className="main-container">
+          <Routes />
+        </div>
+      </BrowserRouter>
+    </ReduxProvider>
   );
 };
 
