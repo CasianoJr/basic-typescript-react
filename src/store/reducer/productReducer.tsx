@@ -5,10 +5,10 @@ interface Actions {
     payload: Product[],
 }
 
-export const productListReducer = (state= [], action : Actions) =>{
+export const productListReducer = (state :ListProduct= [], action : Actions) =>{
     switch(action.type){
         case actionTypes.SET_PRODUCT_LIST:
-            return [...state, ...action.payload]
+            return action.payload
         default:
             return state
     }

@@ -1,0 +1,15 @@
+.product-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  border: 1px solid rgb(69, 88, 88);
+  flex: 0 1 15%;
+  min-width: 200px;
+  padding: auto;
+  div{
+     padding: 20 
+  }
+}
