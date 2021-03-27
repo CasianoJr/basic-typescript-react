@@ -1,8 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import './navbar.scss'
 
+interface SelectorProps {
+  userCart: {
+    cart: CartProduct[],
+    bank: number
+  }
+}
+
 export const NavBar: React.FC = () => {
+  const {cart} = useSelector<SelectorProps, SelectorProps["userCart"]>(state=>state.userCart)
+  const numberInCart = cart.reduce((total, item) => item.count + total,0 )
   return (
     <nav className="main-nav">
       <ul>
@@ -16,7 +26,7 @@ export const NavBar: React.FC = () => {
           <Link to="/">Others</Link>
         </li>
         <li>
-          <Link to="/cart">Cart <small className="cart-badge">3</small></Link>
+          <Link to="/cart">Cart <small className="cart-badge">{numberInCart}</small></Link>
         </li>
       </ul>
     </nav>
