@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
+import { addProductToCart } from "../../store/actions/addProductToCart";
 import './detail.scss'
 
 interface ParamsId {
@@ -17,6 +18,7 @@ export const Detail: React.FC = (props) => {
   const productList = useSelector<SelectorProps, SelectorProps["productList"]>(
     (state) => state.productList
   );
+  const dispatch = useDispatch()
   const selectedProduct = productList.find((item) => item.id === productId);
   const [product, setProduct] = useState(selectedProduct);
 
@@ -37,8 +39,9 @@ export const Detail: React.FC = (props) => {
         <div>
           <img src={product.image} alt={product.title} />
           <h3>{product.title}</h3>
-          <p>{product.price}</p>
           <p>{product.description}</p>
+          <p>{product.price}</p>
+          <button onClick={()=>dispatch(addProductToCart(product))}>Add To Cart</button>
         </div>
       </div>
     </>
